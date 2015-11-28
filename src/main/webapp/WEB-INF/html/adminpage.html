@@ -1,0 +1,356 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+<head>
+  <title>Admin Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+</head>
+<body> -->
+<div id="infoAdd" style="padding-top: 50px;">
+
+<ul class="nav nav-tabs" role="tablist" id="myTab">
+						  <li class="active"><a data-target="#priestinfoid" role="tab" data-toggle="tab">Priest Info</a></li>
+						  <li><a data-target="#churchinfoid" role="tab" data-toggle="tab">Church Info</a></li>
+						  <li><a data-target="#fileid" role="tab" data-toggle="tab">Menu 3</a></li>
+						</ul>
+
+  
+<!-- <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#menu3">Menu 3</a></li>
+    <li><a data-toggle="tab" href="#menu1">Menu 1</a></li>
+    <li><a data-toggle="tab" href="#menu2">Menu 2</a></li>
+    
+  </ul> -->
+ <div class="tab-content">
+    <div id="priestinfoid" class="tab-pane active">
+       <div class="panel panel-primary">
+
+	<div class="panel-heading">Priest Info</div>
+	
+	<div class="panel-body">
+
+		<div class="form-group">
+		
+		 <form name="priestform">
+
+			<table st-table="rowCollection" class="table table-striped">
+
+				<tr>
+					
+					<td> <label for="priestname"  class="col-md-3" >Priest Name<sup style="color: red;">*</sup>:</label> </td>
+
+					<td><input type="text" id="priestname"   class="form-control"  ng-model="priest.priestName" required /> </br> </td>
+
+                    <td> <label for="priestdob" class="col-md-3" > Priest DOB<sup style="color: red;">*</sup>:</label> </td>
+                     
+					<td> <input type="date" class="form-control" id="exampleInputDOB1" ng-model="priest.priestDob" placeholder="Date of Birth"> </td>
+					
+					
+                    <td> <label for="priestplace" class="col-md-3" > Priest Birth Place<sup style="color: red;">*</sup>:</label> </td>
+                   
+                    <td> <input type="text" id="priestplace"   class="form-control"  ng-model="priest.priestBplace"  required /> </td>
+                    
+                    </tr>
+                    
+                    <tr>
+                    
+                    <td> <label for="priestedu" class="col-md-3" > Priest Education<sup style="color: red;">*</sup>:</label> </td>
+                    
+					<td> <input type="text" id="priestedu"   class="form-control" ng-model="priest.priestEdu" required /> </td>
+					
+					<td> <label for="priestspc" class="col-md-3" > Priest Specialization<sup style="color: red;">*</sup>:</label> </td>
+					
+					<td> <input type="text" id="priestspc"   class="form-control" ng-model="priest.priestSpec" required /> </td>
+						
+					<td> <label for="priesteduuni" class="col-md-3" > Educated University<sup style="color: red;">*</sup>:</label> </td>
+					
+					<td> <input type="text" id="priesteduuni"   class="form-control" ng-model="priest.priestEducuni" required /> </td>
+					
+					</tr>
+					
+					<tr>
+					
+					<td> <label for="prstdoorno" class="col-md-3" > Door No<sup style="color: red;">*</sup>:</label> </td>
+                    
+					<td> <input type="text" id="prstdoorno"   class="form-control" ng-model="priest.priestDoorno" required /> </td>
+					
+					<td> <label for="prieststret" class="col-md-3" > Street<sup style="color: red;">*</sup>:</label> </td>
+					
+					<td> <input type="text" id="prieststret"   class="form-control" ng-model="priest.priestStreet" required /> </td>
+						
+					<td> <label for="priestvilage" class="col-md-3" > Village<sup style="color: red;">*</sup>:</label> </td>
+					
+					<td> <input type="text" id="priestvilage"   class="form-control" ng-model="priest.priestVillage" required /> </td>
+					
+					</tr>
+					
+					<tr>
+					
+					<td> <label for="prsttaluk" class="col-md-3" > Taluk<sup style="color: red;">*</sup>:</label> </td>
+                    
+					<td> <input type="text" id="prsttaluk"   class="form-control" ng-model="priest.priestTK" required /> </td>
+					
+					<td> <label for="prstdistrict" class="col-md-3" > District<sup style="color: red;">*</sup>:</label> </td>
+					
+					<td> <input type="text" id="prstdistrict"   class="form-control" ng-model="priest.priestDist" required /> </td>
+						
+					<td> <label for="prststate" class="col-md-3" > State<sup style="color: red;">*</sup>:</label> </td>
+					
+					<td> <input type="text" id="prststate"   class="form-control" ng-model="priest.priestState" required /> </td>
+					
+					</tr>
+					
+					<tr>
+					
+					<td> <label for="prstcountry" class="col-md-3" > Country<sup style="color: red;">*</sup>:</label> </td>
+                    
+					<td> <input type="text" id="prstcountry"   class="form-control" ng-model="priest.priestCountry" required /> </td>
+					
+					<td> <label for="prstpincode" class="col-md-3" >Pin code<sup style="color: red;">*</sup>:</label> </td>
+					
+					<td> <input type="text" id="prstpincode"   class="form-control" ng-model="priest.priestPincode" required /> </td>
+						
+					<td> <label for="prstphoneno" class="col-md-3" > Phone no<sup style="color: red;">*</sup>:</label> </td>
+					
+					<td> <input type="text" id="prstphoneno"   class="form-control" ng-model="priest.priestPhno" required /> </td>
+					
+					</tr>
+					
+					<tr>
+					
+					<td> <label for="prstmobno" class="col-md-3" > Mobile No<sup style="color: red;">*</sup>:</label> </td>
+                    
+					<td> <input type="text" id="prstmobno"   class="form-control" ng-model="priest.priestMobno" required /> </td>
+					
+					<td> <label for="prstemail" class="col-md-3" > Email-ID<sup style="color: red;">*</sup>:</label> </td>
+					
+					<td> <input type="text" id="prstemail"   class="form-control" ng-model="priest.priestEmail" required /> </td>
+						
+					<td> <label for="prstdio" class="col-md-3" > Diocese<sup style="color: red;">*</sup>:</label> </td>
+					
+					<td> <input type="text" id="prstdio"   class="form-control" ng-model="priest.priestDiocese" required /> </td>
+					
+					</tr>
+					
+					
+					</tr>
+					
+					<tr>
+					
+					<td> <label for="prstpos" class="col-md-3" > Addition Position<sup style="color: red;">*</sup>:</label> </td>
+                    
+					<td> <input type="text" id="prstpos"   class="form-control" ng-model="priest.priestAddposition" required /> </td>
+					
+					<td> <label for="prstimg" class="col-md-3" > Image Name<sup style="color: red;">*</sup>:</label> </td>
+					
+					<td> <input type="text" id="prstimg"   class="form-control" ng-model="priest.priestImagename" required /> </td>
+						
+					<td> <label for="prstinfo" class="col-md-3">Priest Info<sup style="color: red;">*</sup>:</label> </td>
+					
+					<td> <textarea  id="prstinfo" ng-model="priest.priestInfo" cols="40" rows="10"></textarea> </td>
+					
+					
+					<td> <button class="btn btn-primary btn-primary" type="submit" id="addpriestDetailBtn" ng-click="addPriestinfo(priest)">
+					
+					<span class="glyphicon glyphicon-floppy-save"></span> Add Priest Details </button>
+					
+					</td>	
+					
+					</tr>
+					
+			</table>
+			
+		 </form>
+		 
+		</div>
+		
+		</div>
+		
+		</div>
+  </div>
+  <div id="churchinfoid" class="tab-pane">
+     <div class="panel panel-primary">
+	
+	<div class="panel-heading">Church Info</div>
+	
+	<div class="panel-body">
+
+		<div class="form-group">
+		
+		 <form name="churchform">
+
+			<table st-table="rowCollection" class="table table-striped">
+
+				<tr>
+					
+					<td> <label for="churchname" class="col-md-3">Church Name<sup style="color: red;">*</sup>:</label> </td>
+
+					<td><input type="text" id="churchname"  class="form-control" ng-model="church.churchName" required /> </br> </td>
+
+                    <td> <label for="churchdoorno" class="col-md-3">Door No<sup style="color: red;">*</sup>:</label> </td>
+                     
+					<td> <input type="text" id="churchdoorno"   class="form-control" ng-model="church.churchDoorno" required /> </td>
+                   
+                    <td> <label for="churchstreet" class="col-md-3">Street<sup style="color: red;">*</sup>:</label> </td>
+                   
+                    <td> <input type="text" id="churchstreet"   class="form-control" ng-model="church.churchStreet" required /> </td>
+                    
+                    </tr>
+                    
+                    <tr>
+                    
+                    <td> <label for="churchvillage" class="col-md-3">Village<sup style="color: red;">*</sup>:</label> </td>
+                    
+					<td> <input type="text" id="churchvillage"   class="form-control" ng-model="church.churchVillage" required /> </td>
+					
+					<td> <label for="churchtaluk" class="col-md-3">Taluk<sup style="color: red;">*</sup>:</label> </td>
+					
+					<td> <input type="text" id="churchtaluk"   class="form-control" ng-model="church.churchTK" required /> </td>
+						
+					<td> <label for="churchdist" class="col-md-3">District<sup style="color: red;">*</sup>:</label> </td>
+					
+					<td> <input type="text" id="churchdist"   class="form-control" ng-model="church.churchDist" required /> </td>
+					
+					</tr>
+					
+					
+					
+					<tr>
+						
+					<td> <label for="churchstate" class="col-md-3">State<sup style="color: red;">*</sup>:</label> </td>
+					
+					<td> <input type="text" id="churchstate"   class="form-control" ng-model="church.churchState" required /> </td>
+					
+					<td> <label for="chrcountry" class="col-md-3">Country<sup style="color: red;">*</sup>:</label> </td>
+                    
+					<td> <input type="text" id="chrcountry"   class="form-control" ng-model="church.churchCountry" required /> </td>
+					
+					<td> <label for="chrpincode" class="col-md-3">Pincode<sup style="color: red;">*</sup>:</label> </td>
+					
+					<td> <input type="text" id="chrpincode"   class="form-control" ng-model="church.churchPincode" required /> </td>
+					
+					</tr>
+					
+					
+					<tr>
+					
+					<td> <label for="chrphno" class="col-md-3">Phone No<sup style="color: red;">*</sup>:</label> </td>
+					
+					<td> <input type="text" id="chrphno"   class="form-control" ng-model="church.churchPhno" required /> </td>
+					
+					<td> <label for="chrmobno" class="col-md-3">Mobile No<sup style="color: red;">*</sup>:</label> </td>
+                    
+					<td> <input type="text" id="chrmobno"   class="form-control" ng-model="church.churchMobno" required /> </td>
+					
+					<td> <label for="chremail" class="col-md-3">Email-ID<sup style="color: red;">*</sup>:</label> </td>
+					
+					<td> <input type="text" id="chremail"   class="form-control" ng-model="church.churchEmail" required /> </td>
+						
+					
+					
+					</tr>
+					
+					
+					
+					
+					<tr>
+					
+					<td> <label for="chrdio" class="col-md-3">Diocese<sup style="color: red;">*</sup>:</label> </td>
+					
+					<td> <input type="text" id="chrdio"   class="form-control" ng-model="church.churchDiocese" required /> </td>
+					
+					
+					
+					<td> <label for="churchis" class="col-md-3">Church History<sup style="color: red;">*</sup>:</label> </td>
+					
+					<td> <textarea  id="churchis" ng-model="church.churchHistory" cols="40" rows="10"></textarea> </td>
+					
+					</tr>
+					
+					<tr>
+					
+					<td> <label for="churchintro" class="col-md-3">Church Intro<sup style="color: red;">*</sup>:</label> </td>
+					
+					<td> <textarea  id="churchintro" ng-model="church.churchIntro" cols="40" rows="10"></textarea> </td>
+					
+					
+					<td> <label for="churchvision" class="col-md-3">Church Vision<sup style="color: red;">*</sup>:</label> </td>
+					
+					<td> <textarea  id="churchvision" ng-model="church.churchVision" cols="40" rows="10"></textarea> </td>	
+					
+					
+					<td> <button class="btn btn-primary btn-primary" type="submit" id="addchrDetailBtn" ng-click="addChurchinfo(church)">
+					
+					<span class="glyphicon glyphicon-floppy-save"></span> Add Church Details </button>
+					
+					</td>	
+					
+					</tr>
+					
+			</table>
+			
+		 </form>
+		 
+		</div>
+		
+		</div>
+		
+		</div>
+  </div>
+  <div id="fileid" class="tab-pane">
+     <div class="panel panel-primary">
+	
+	<div class="panel-heading"></div>
+	
+	<div class="panel-body">
+
+		<div class="form-group">
+		
+		 <form name="fileform">
+
+			<table st-table="rowCollection" class="table table-striped">
+
+					<tr>
+					
+					<td> <button class="btn btn-primary btn-primary" type="submit" id="uploadphoto">
+					
+					<span class="glyphicon glyphicon-floppy-save"></span> Upload Photo </button>
+					
+					</td>	
+					
+					</tr>
+					
+					<tr>
+					
+					<td> <button class="btn btn-primary btn-primary" type="submit" id="browfile">
+					
+					<span class="glyphicon glyphicon-floppy-save"></span> Browse File </button>
+					
+					</td>	
+					
+					</tr>
+					
+			</table>
+			
+		 </form>
+		 
+		</div>
+		
+		</div>
+		
+		</div>
+  </div>
+  
+
+  
+  
+</div>
+</div>
+<!-- 		
+</body>
+</html> -->

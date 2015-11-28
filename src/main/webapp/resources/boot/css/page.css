@@ -1,0 +1,10 @@
+@charset "utf-8";
+/* CSS Document */
+
+.tableNmaw{ border:0px hidden ;
+    }
+        .tableNmaw td { 
+            border:0px hidden;
+			padding:7px;width:380px;
+        }
+		
