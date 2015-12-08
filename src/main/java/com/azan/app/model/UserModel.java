@@ -9,20 +9,13 @@ import java.math.BigInteger;
 public class UserModel implements Serializable {
 
 	
-	private static final long serialVersionUID = 1L;
-	
-	private BigInteger userId;
-	
-	private String isActive;
-	
-	private String username;
-	
-	private String userEmailid;
-	
-	private String password;
-	
-	private String userType;
-	
+	private static final long serialVersionUID = 1L;	
+	private BigInteger userId;	
+	private String isActive;	
+	private String username;	
+	private String userEmailid;	
+	private String password;	
+	private String userType;	
 	private String message;
 
 	

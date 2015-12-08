@@ -37,6 +37,9 @@ public class User implements Serializable {
 
 	@Column(name="user_email")
 	private String userEmail;
+	
+	@Column(name="user_identifier")
+	private String userIdentifier;
 
 	@Column(name="user_password")
 	private String userPassword;
@@ -140,6 +143,14 @@ public class User implements Serializable {
 
 	public void setChurchEntity(ChurchEntity churchEntity) {
 		this.churchEntity = churchEntity;
+	}
+
+	public String getUserIdentifier() {
+		return userIdentifier;
+	}
+
+	public void setUserIdentifier(String userIdentifier) {
+		this.userIdentifier = userIdentifier;
 	}
 
 }

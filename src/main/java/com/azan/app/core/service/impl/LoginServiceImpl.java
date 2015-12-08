@@ -26,6 +26,7 @@ public class LoginServiceImpl implements LoginService {
 			{
 				userModel1.setUserId(user.getUserId());
 				userModel1.setUserEmailid(user.getUserEmail());
+				userModel1.setUserType(user.getUserType());
 				//userModel1.setUsername(user.);
 				
 				userModel1.setMessage("SUCCESS");

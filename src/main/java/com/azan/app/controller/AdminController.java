@@ -42,7 +42,7 @@ public class AdminController {
 	public @ResponseBody
 	Boolean addChurchinfo(@RequestBody ChurchInfoModel church) {
 		try {
-			boolean updated = adminService.saveChurchinfo(church);
+			boolean updated = adminService.saveChurchDetails(church);
 			return updated;
 		} catch (Exception e) {
 			e.printStackTrace();

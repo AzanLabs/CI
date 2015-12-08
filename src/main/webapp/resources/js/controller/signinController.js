@@ -24,9 +24,16 @@ var signinController = function($scope, $http, $location, $rootScope, $cookieSto
 				/* if($rootScope.user.role=='ADMIN')
 					 {*/
 					
-				     $("#loginModal").modal("hide");    
+				     $("#loginModal").modal("hide"); 
+				     if($rootScope.user.userType=="S")
+				    	 {
 				 
-					 $location.path('/adminpage');
+				    	 	$location.path('/superAdminAccess');
+				    	 }
+				     else
+				    	 {
+				    	 	$location.path('/adminpage');
+				    	 }
 					
 					
 					/* }

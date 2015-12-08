@@ -4,6 +4,7 @@ import java.io.Serializable;
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.math.BigDecimal;
 import java.math.BigInteger;
 
 
@@ -36,7 +37,7 @@ public class ChurchInfo implements Serializable {
 	private String churchEmailId;
 
 	@Column(name="church_mobile_no")
-	private BigInteger churchMobileNo;
+	private BigDecimal churchMobileNo;
 
 	@Column(name="church_name")
 	private String churchName;
@@ -140,12 +141,12 @@ public class ChurchInfo implements Serializable {
 		this.churchEmailId = churchEmailId;
 	}
 
-	public BigInteger getChurchMobileNo() {
+	public BigDecimal getChurchMobileNo() {
 		return this.churchMobileNo;
 	}
 
-	public void setChurchMobileNo(BigInteger churchMobileNo) {
-		this.churchMobileNo = churchMobileNo;
+	public void setChurchMobileNo(BigDecimal bigDecimal) {
+		this.churchMobileNo = bigDecimal;
 	}
 
 	public String getChurchName() {

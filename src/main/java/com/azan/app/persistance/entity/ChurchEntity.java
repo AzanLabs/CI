@@ -4,6 +4,7 @@ import java.io.Serializable;
 import javax.persistence.*;
 
 import java.sql.Timestamp;
+import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.List;
 
@@ -29,7 +30,7 @@ public class ChurchEntity implements Serializable {
 	private String entityAddress;
 
 	@Column(name="entity_contact_no")
-	private BigInteger entityContactNo;
+	private BigDecimal entityContactNo;
 
 	@Column(name="entity_email_id")
 	private String entityEmailId;
@@ -89,13 +90,17 @@ public class ChurchEntity implements Serializable {
 		this.entityAddress = entityAddress;
 	}
 
-	public BigInteger getEntityContactNo() {
-		return this.entityContactNo;
+	
+
+	public BigDecimal getEntityContactNo() {
+		return entityContactNo;
 	}
 
-	public void setEntityContactNo(BigInteger entityContactNo) {
+
+	public void setEntityContactNo(BigDecimal entityContactNo) {
 		this.entityContactNo = entityContactNo;
 	}
+
 
 	public String getEntityEmailId() {
 		return this.entityEmailId;

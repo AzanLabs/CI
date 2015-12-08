@@ -24,11 +24,17 @@ var
 			controller : signinController
 			})
 			
-			
-			$routeProvider.when('/adminpage', { 
-			templateUrl: 'adminpage/layout',
-			controller: AdminController
+		$routeProvider.when('/superAdminAccess', { 
+			templateUrl: 'superAdminAccess/layout',
+			controller: SuperAdminAccessController 
 			})
+			
+		$routeProvider.when('/adminpage', { 
+			templateUrl: 'adminpage/layout',
+			controller: AdminController 
+			})
+			
+			
 			.otherwise({
 			redirectTo : '/signin'
 			});

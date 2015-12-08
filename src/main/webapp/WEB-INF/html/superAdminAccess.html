@@ -1,0 +1,100 @@
+
+<div id="adminAdd" style="padding-top: 50px;" >
+
+<ul class="nav nav-tabs" role="tablist" id="myTab">
+						  <li class="active"><a data-target="#admininfoid" role="tab" data-toggle="tab">Super Admin</a></li>
+						  <!-- <li><a data-target="#churchinfoid" role="tab" data-toggle="tab">Church Info</a></li>
+						  <li><a data-target="#fileid" role="tab" data-toggle="tab">Menu 3</a></li> -->
+						</ul>
+
+  
+<!-- <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#menu3">Menu 3</a></li>
+    <li><a data-toggle="tab" href="#menu1">Menu 1</a></li>
+    <li><a data-toggle="tab" href="#menu2">Menu 2</a></li>
+    
+  </ul> -->
+ <div class="tab-content">
+    <div id="#admininfoid" class="tab-pane active">
+       <div class="panel panel-primary">
+
+	<div class="panel-heading">Admin Info</div>
+	
+	<div class="panel-body">
+
+		<div class="form-group">
+		
+		
+			<table st-table="rowCollection" class="table table-striped">
+
+				<tr>
+					
+					<td> <label for="churchname" style="width: 150px;" class="col-lg-1">Church Name<sup style="color: red;">*</sup>:</label> </td>
+
+					<td><input type="text" id="churchname"  class="form-control" ng-model="church.churchName" required /> </br> </td>
+                    
+                  	<td> <label for="chrmobno" style="width: 150px;" class="col-md-1">Mobile No<sup style="color: red;">*</sup>:</label> </td>
+                    
+					<td> <input type="text" id="chrmobno"   class="form-control" ng-model="church.churchContactNo" required /> </td>
+					
+					<td> <label for="chremail" style="width: 150px;" class="col-md-1">Church Email-ID<sup style="color: red;">*</sup>:</label> </td>
+					
+					<td> <input type="text" id="chremail"   class="form-control" ng-model="church.churchEmailId" required /> </td>
+					<td> <label for="chrAddress" style="width: 150px;" class="col-md-1">Church Address<sup style="color: red;">*</sup>:</label> </td>
+					
+					<td> <input type="text" id="chremail"   class="form-control" ng-model="church.churchAddress" required /> </td>
+				</tr>
+				<tr>	
+					<td> <label for="username" style="width: 150px;" class="col-md-1">User Email Id<sup style="color: red;">*</sup>:</label> </td>
+					
+					<td> <input type="text" id="username"   class="form-control" ng-model="church.userEmail" required /> </td>
+						
+					
+					<td> <label for="password" style="width: 150px;" class="col-md-1">Password<sup style="color: red;">*</sup>:</label> </td>
+					
+					<td> <input type="password" id="password"   class="form-control" ng-model="church.userPassword" required /> </td>
+					
+					
+					
+					
+						
+					
+				</tr>
+				<tr>	
+					<td> <label for="userIdf" style="width: 150px;" class="col-md-1">User Identifier<sup style="color: red;">*</sup>:</label> </td>
+					
+					<td> <input type="text" id="userIdf"   class="form-control" ng-model="church.userIdentifier" required /> </td>
+						
+					
+					<td> <label for="dftPassword" style="width: 150px;" class="col-md-1">Default Password<sup style="color: red;">*</sup>:</label> </td>
+					
+					<td> <input type="dftPassword" id="password"   class="form-control" ng-model="church.userDefaultPwd" required /> </td>
+					
+					<td> <label for="usrProfileSet" style="width: 150px;" class="col-md-1">User Profile Set<sup style="color: red;">*</sup>:</label> </td>
+					
+					<td> <input type="text" id="usrProfileSet"   class="form-control" ng-model="church.userProfileSet" required /> </td>
+						
+					<td> <button class="btn btn-primary btn-primary" type="submit" id="addsuperAdminBtn" ng-click="addChruchinfo(church)">
+					
+					<span class="glyphicon glyphicon-floppy-save"></span> Add User Details </button>
+					
+					</td>	
+				</tr>
+					
+			</table>
+			
+		
+		</div>
+		
+		</div>
+		
+		</div>
+  </div>
+ 
+
+  
+
+  
+  
+</div>
+</div>

@@ -1,6 +1,7 @@
 package com.azan.app.model;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.math.BigInteger;
 
 import com.google.api.client.util.DateTime;
@@ -21,7 +22,7 @@ public class ChurchInfoModel implements Serializable{
 	private String churchCountry;
 	private Integer churchPincode;
 	private BigInteger churchPhno;
-	private BigInteger churchMobno;
+	private BigDecimal churchMobno;
 	private String churchEmail;
 	private String churchDiocese;
 	private DateTime createdOn;
@@ -115,10 +116,11 @@ public class ChurchInfoModel implements Serializable{
 	public void setChurchPhno(BigInteger churchPhno) {
 		this.churchPhno = churchPhno;
 	}
-	public BigInteger getChurchMobno() {
+	
+	public BigDecimal getChurchMobno() {
 		return churchMobno;
 	}
-	public void setChurchMobno(BigInteger churchMobno) {
+	public void setChurchMobno(BigDecimal churchMobno) {
 		this.churchMobno = churchMobno;
 	}
 	public String getChurchEmail() {

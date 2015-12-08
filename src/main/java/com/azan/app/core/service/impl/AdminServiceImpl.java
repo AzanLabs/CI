@@ -1,6 +1,7 @@
 package com.azan.app.core.service.impl;
 
 import java.math.BigInteger;
+import java.sql.Time;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -14,6 +15,7 @@ import org.springframework.stereotype.Service;
 import com.azan.app.core.service.AdminService;
 import com.azan.app.model.ChurchInfoModel;
 import com.azan.app.model.PriestInfoModel;
+import com.azan.app.model.UserChurchInfoModal;
 import com.azan.app.persistance.entity.ChurchAdditionalInfo;
 import com.azan.app.persistance.entity.ChurchEntity;
 import com.azan.app.persistance.entity.ChurchInfo;
@@ -57,6 +59,8 @@ public class AdminServiceImpl implements AdminService {
 	ChurchEntityJPARepository churchentinfo;
 	
 	Date currentDate = new Date();
+	
+	
 	
 	
 	public boolean savePriestinfo(PriestInfoModel priest) {
@@ -108,7 +112,7 @@ public class AdminServiceImpl implements AdminService {
 	}
 	
 
-	public boolean saveChurchinfo(ChurchInfoModel church) {
+	public boolean saveChurchDetails(ChurchInfoModel church) {
 		 boolean save = false;
 			try
 			{
@@ -193,6 +197,46 @@ public class AdminServiceImpl implements AdminService {
 				return null;
 			}
 			
+	}
+
+
+	@Override
+	public boolean saveChurchInfo(UserChurchInfoModal church) {
+		
+		try
+		{
+		
+		ChurchEntity churchent = new ChurchEntity();
+		churchent.setCreatedOn(new Timestamp( currentDate.getTime() ));
+		churchent.setEntityAddress(church.getChurchAddress() );
+		churchent.setEntityName(church.getChurchName());
+		churchent.setEntityEmailId(church.getChurchEmailId());
+		churchent.setEntityContactNo(church.getChurchContactNo());
+		churchent.setIsActive("N");
+		churchent.setIsChurchSet("N");
+		churchentinfo.saveAndFlush(churchent);
+		
+		User user=new User();
+		user.setChurchEntity(churchent);
+		user.setCreatedOn(new Timestamp( currentDate.getTime() ));
+		user.setIsActive("N");
+		user.setIsDefaultPwd(church.getUserDefaultPwd());
+		user.setIsProfileSet(church.getUserProfileSet());
+		user.setUserEmail(church.getChurchEmailId());
+		user.setUserPassword(church.getUserEmail());
+		user.setUserType("S");
+		user.setUserIdentifier(church.getUserIdentifier());
+		userrepo.save(user);
+		return true;
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+			return false;
+		}
+		
+		// TODO Auto-generated method stub
+		
 	}
 
 	
