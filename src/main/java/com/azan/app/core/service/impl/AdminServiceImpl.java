@@ -13,18 +13,24 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.azan.app.core.service.AdminService;
+import com.azan.app.model.AddEventModel;
 import com.azan.app.model.ChurchInfoModel;
+import com.azan.app.model.FacilitiesGrpModel;
 import com.azan.app.model.PriestInfoModel;
 import com.azan.app.model.UserChurchInfoModal;
 import com.azan.app.persistance.entity.ChurchAdditionalInfo;
 import com.azan.app.persistance.entity.ChurchEntity;
+import com.azan.app.persistance.entity.ChurchEvent;
 import com.azan.app.persistance.entity.ChurchInfo;
+import com.azan.app.persistance.entity.FacilityGrp;
 import com.azan.app.persistance.entity.PriestAdditionalInfo;
 import com.azan.app.persistance.entity.PriestInfo;
 import com.azan.app.persistance.entity.User;
+import com.azan.app.persistance.repo.AddEventJPARepository;
 import com.azan.app.persistance.repo.ChurchAddInfoJPARepository;
 import com.azan.app.persistance.repo.ChurchEntityJPARepository;
 import com.azan.app.persistance.repo.ChurchInfoJPARepository;
+import com.azan.app.persistance.repo.FacilitiesGrpJPARepository;
 import com.azan.app.persistance.repo.PriestAddInfoJPARepository;
 import com.azan.app.persistance.repo.PriestInfoJPARepository;
 import com.azan.app.persistance.repo.UserRepository;
@@ -57,6 +63,12 @@ public class AdminServiceImpl implements AdminService {
 	
 	@Autowired
 	ChurchEntityJPARepository churchentinfo;
+	
+	@Autowired
+	AddEventJPARepository addeventrepo;
+	
+	@Autowired
+	FacilitiesGrpJPARepository facilitiesGrprepo;
 	
 	Date currentDate = new Date();
 	
@@ -240,4 +252,61 @@ public class AdminServiceImpl implements AdminService {
 	}
 
 	
+	@Override
+	public boolean saveEventinfo(AddEventModel event) {
+		 boolean save = false;
+		 try
+		 {
+			ChurchEvent churchEvent = new ChurchEvent();
+			churchEvent.setEventName(event.getEventName());
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd");
+			
+			churchEvent.setEventDate(sdf.parse(event.getEventDate()));
+			churchEvent.setEventDetailsWrite(event.getEventDetailsWrite());
+			addeventrepo.saveAndFlush(churchEvent);
+		
+			save=true;
+			return save;
+		 }catch (Exception e) {
+				e.printStackTrace();
+				return false;
+			}
+			 
+		 }
+
+
+	@Override
+	public boolean saveFacilityGrp(FacilitiesGrpModel facility) {
+		boolean save = false;
+		try{
+			FacilityGrp facilityGrp = new FacilityGrp();
+			facilityGrp.setFacilityName(facility.getFacilityName());
+			facilitiesGrprepo.saveAndFlush(facilityGrp);
+			
+			save = true;
+			return save;
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+	}
+
+
+	@Override
+	public List<String> getFacilities() {
+		try{
+			List<String> facility=new ArrayList<String>();
+			List<FacilityGrp> facilityGrp = facilitiesGrprepo.findAll();
+			
+			for(FacilityGrp chrfacility:facilityGrp)
+			{
+				facility.add(chrfacility.getFacilityName());
+			}
+			
+			return facility;
+		}catch (Exception e) {
+			e.printStackTrace();
+		}return null;
+	}
 }

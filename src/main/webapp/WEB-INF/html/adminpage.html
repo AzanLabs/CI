@@ -16,6 +16,9 @@
 <ul class="nav nav-tabs" role="tablist" id="myTab">
 						  <li class="active"><a data-target="#priestinfoid" role="tab" data-toggle="tab">Priest Info</a></li>
 						  <li><a data-target="#churchinfoid" role="tab" data-toggle="tab">Church Info</a></li>
+						   <li><a data-target="#addeventid" role="tab" data-toggle="tab">Add Events</a></li>
+						    <li><a data-target="#facilitiesid" role="tab" data-toggle="tab">Facilities</a></li>
+						    <li><a data-target="#churchfacilityid" role="tab" data-toggle="tab">Church Facilities</a></li>
 						  <li><a data-target="#fileid" role="tab" data-toggle="tab">Menu 3</a></li>
 						</ul>
 
@@ -302,6 +305,131 @@
 		
 		</div>
   </div>
+  
+  <div id="addeventid" class="tab-pane">
+     <div class="panel panel-primary">
+	
+	<div class="panel-heading">Add Events</div>
+	
+	<div class="panel-body">
+
+		<div class="form-group">
+		
+		 <form name="churchform">
+
+			<table st-table="rowCollection" class="table table-striped">
+
+			<tr>
+						
+					<td> <label for="eventname" class="col-md-3">Name<sup style="color: red;">*</sup>:</label> </td>
+					
+					<td> <input type="text" id="eventname"   class="form-control" ng-model="events.eventName" required /> </td>
+					
+					<td> <label for="evntdate" class="col-md-3">Date<sup style="color: red;">*</sup>:</label> </td>
+                    
+					<td> <input type="date" id="evntdate"   class="form-control" ng-model="events.eventDate" required /> </td>
+					
+					<td> <label for="evntdetailswrite" class="col-md-3">Event Details<sup style="color: red;">*</sup>:</label> </td>
+					
+					<td> <input type="text" id="evntdetailswrite"   class="form-control" ng-model="events.eventDetailsWrite" required /> </td>
+					
+					<td> <button class="btn btn-primary btn-primary" type="submit" id="addeventBtn" ng-click="addEvents(events)">
+					
+					<span class="glyphicon glyphicon-floppy-save"></span> Add Events </button>
+					
+					</td>
+					
+			</tr>	
+					
+			</table>
+			
+		 </form>
+		 
+		</div>
+		
+		</div>
+		
+		</div>
+  </div>
+  
+    <div id="facilitiesid" class="tab-pane">
+     <div class="panel panel-primary">
+	
+	<div class="panel-heading">Facilities</div>
+	
+	<div class="panel-body">
+
+		<div class="form-group">
+		
+		 <form name="churchform">
+
+			<table st-table="rowCollection" class="table table-striped">
+
+				<tr>
+						
+					<td> <label for="facilname" class="col-md-3">Name<sup style="color: red;">*</sup>:</label> </td>
+					
+					<td> <input type="text" id="facilname"   class="form-control" ng-model="facility.facilityName" required /> </td>
+					
+					<td> <button class="btn btn-primary btn-primary" type="submit" id="addfacilityBtn" ng-click="addFacilities(facility)">
+					
+					<span class="glyphicon glyphicon-floppy-save"></span> Add Facilities </button>
+					
+					</td>
+					
+				</tr>	
+					
+			</table>
+			
+		 </form>
+		 
+		</div>
+		
+		</div>
+		
+		</div>
+  </div>
+  
+  <div id="churchfacilityid" class="tab-pane">
+     <div class="panel panel-primary">
+	
+	<div class="panel-heading">Church Facility</div>
+	
+	<div class="panel-body">
+
+		<div class="form-group">
+		
+		 <form name="churchform">
+
+			<table st-table="rowCollection" class="table table-striped">
+
+				<tr>
+						
+					<td> <label for="chrfaciliname" class="col-md-3">Church Facility<sup style="color: red;">*</sup>:</label> </td>
+					
+					<td> 
+					
+					
+					<select data-ng-options="o for o in churchFacilities" ng-model="chrfacilityname"  required >
+						<option value="">--Select Facilities--</option>
+					</select>
+					
+					</td>
+					
+				</tr>	
+					
+			</table>
+			
+		 </form>
+		 
+		</div>
+		
+		</div>
+		
+		</div>
+  </div>
+  
+  
   <div id="fileid" class="tab-pane">
      <div class="panel panel-primary">
 	
